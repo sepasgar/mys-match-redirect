@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+  mys-match.com/blogs/ -> https://www.mysmatch.com/blogs/
+  A REAL page (HTTP 200), not the 404.html catch-all: store policy checkers
+  (Google Play flagged the privacy policy and account-deletion links, Sept
+  2026) and crawlers treat a 404 status as "page missing" even though
+  browsers follow the redirect. One such page exists for every page of the
+  main site; see README.md.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MysMatch has moved</title>
+  <link rel="canonical" href="https://www.mysmatch.com/blogs/">
+  <script>location.replace('https://www.mysmatch.com/blogs/' + location.search + location.hash);</script>
+  <meta http-equiv="refresh" content="0; url=https://www.mysmatch.com/blogs/">
+</head>
+<body>
+  <p>This page has moved to <a href="https://www.mysmatch.com/blogs/">www.mysmatch.com/blogs/</a>.</p>
+</body>
+</html>
