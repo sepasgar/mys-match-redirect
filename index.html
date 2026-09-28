@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+  mys-match.com → www.mysmatch.com redirect (home page; 404.html is the catch-all for every other path and has the full rationale).
+  GitHub Pages serves this file for every path that doesn't exist here, i.e.
+  everything except /.well-known/*. Those two files must stay served directly
+  on the old domain: installed app builds claim mys-match.com for event links,
+  and iOS/Android refuse to follow redirects when fetching them.
+  Pages can't send a real 301, so we redirect client-side, keeping the path,
+  query and hash (e.g. /event/<id> lands on the new site's event page).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MysMatch has moved</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://www.mysmatch.com/">
+  <script>
+    // location.replace keeps the old URL out of the back-button history.
+    location.replace('https://www.mysmatch.com' + location.pathname + location.search + location.hash);
+  </script>
+  <!-- No-JS fallback: can't carry the path, so send to the home page. -->
+  <meta http-equiv="refresh" content="0; url=https://www.mysmatch.com/">
+</head>
+<body>
+  <p>MysMatch has moved to <a href="https://www.mysmatch.com/">www.mysmatch.com</a>.</p>
+</body>
+</html>
